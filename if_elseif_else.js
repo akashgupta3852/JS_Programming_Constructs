@@ -61,3 +61,41 @@
         num = Math.floor(num);
     }
 }
+
+// Taking 3 numbers from cmd line and printing the max and min value after doing arithmetic operations
+{
+    const prompt = require('prompt-sync')();
+    const numInput1 = prompt('Enter 1st number: ');
+    const numInput2 = prompt('Enter 2nd number: ');
+    const numInput3 = prompt('Enter 3rd number: ');
+    var a = numInput1;
+    var b = numInput2;
+    var c = numInput3;
+    console.log("The three numbers are: " + a + ", " + b + " and " + c);
+    let result1 = a + b * c;
+    console.log(result1);
+    let result2 = a % b + c;
+    console.log(result2);
+    let result3 = c + a / b;
+    console.log(result3);
+    let result4 = a * b + c;
+    console.log(result4);
+
+    let min = result1;
+    if(result2 < min)
+        min = result2;
+    else if(result3 < min)
+        min = result3;
+    else if(result4 < min)
+        min = result4;
+    console.log("The minimum value is: " + min);
+
+    let max = result1;
+    if(result2 > max)
+        max = result2;
+    else if(result3 > max)
+        max = result3;
+    else if(result4 > max)
+        max = result4;
+    console.log("The maximum value is: " + max);
+}
