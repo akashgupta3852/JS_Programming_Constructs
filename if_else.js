@@ -37,23 +37,34 @@
     const prompt = require('prompt-sync')();
     const day = prompt('Enter day: ');
     const month = prompt('Enter month: ');
-    if(day >= 20 && day <= 31 && month == "March") {
-        console.log("True");
-        return;
-    }
-       
-    if(day >= 1 && day <= 30 && month == "April") {
-        console.log("True");
-        return;
-    }
-    if(day >= 1 && day <= 31 && month == "May"){
-        console.log("True");
-        return;
-    }
-    if(day >= 1 && day <= 20 && month == "June") {
-        console.log("True");
-        return;
+    if(month == "March" || month == "April" || month == "May") {
+        if(day >= 20 && day <= 31 && month == "March")
+            console.log("True");
+        if(day >= 1 && day <= 30 && month == "April") 
+            console.log("True");
+        if(day >= 1 && day <= 31 && month == "May")
+             console.log("True");
+        if(day >= 1 && day <= 20 && month == "June")
+            console.log("True");
     }
     else 
         console.log("False");
+}
+
+// Checking whether the year is leap year or not
+{
+    const prompt = require('prompt-sync')();
+    const year = prompt('Enter year: ');
+    if(year %4 == 0) {
+        if(year % 100 == 0) {
+            if(year % 400 == 0)
+                console.log(year + " is a leap year");
+            else
+                console.log(year + " is not a leap year");
+        }
+        else 
+            console.log(year + " is a leap year");
+    }
+    else 
+        console.log(year + " is not a leap year");
 }
